@@ -33,11 +33,14 @@ public class Song {
     private LocalDateTime dateReleased = LocalDateTime.now();
 
     @ManyToOne
+    @JsonIgnore
     private User user;
 
     @OneToMany(mappedBy = "song",orphanRemoval = true,cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Reaction> reaction;
 
     @OneToMany(mappedBy = "song",orphanRemoval = true,cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Comment> comment;
 }

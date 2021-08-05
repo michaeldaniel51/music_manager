@@ -1,5 +1,6 @@
 package danny.musicmanager.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,5 +23,6 @@ public class FeedBack {
     private String message;
 
     @ManyToOne
+    @JsonIgnore
     private User user;
 }

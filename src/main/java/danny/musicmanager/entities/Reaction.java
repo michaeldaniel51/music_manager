@@ -24,6 +24,7 @@ public class Reaction {
     private Emoji emoji;
 
     @ManyToOne
+    @JsonIgnore
     private User user;
 
     @ManyToOne

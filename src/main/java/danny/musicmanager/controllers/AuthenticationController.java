@@ -31,16 +31,17 @@ public class AuthenticationController {
 
     private final String PORT;
     private final ObjectMapper objectMapper;
-    private final String contextPath;
+//    private final String contextPath;
+
+
 
 
     @Autowired
     public AuthenticationController(@Value("${server.port}") String PORT,
-                                    ObjectMapper objectMapper,
-                                    @Value("${server.servlet.context-path}") String contextPath) {
+                                    ObjectMapper objectMapper) {
         this.PORT = PORT;
         this.objectMapper = objectMapper;
-        this.contextPath = contextPath;
+      //  this.contextPath = contextPath;
     }
 
 
@@ -49,9 +50,8 @@ public class AuthenticationController {
 
         CloseableHttpClient httpClient = HttpClientBuilder.create().build();
 
-        HttpPost httpPost = new HttpPost("http://localhost:" + PORT + contextPath + "/auth/users");
+        HttpPost httpPost = new HttpPost("http://localhost:" + PORT + "/auth/users");
         httpPost.setEntity(new StringEntity(objectMapper.writeValueAsString(userLogin)));
-
 
         CloseableHttpResponse response = httpClient.execute(httpPost);
         Response<?> responseEntity = objectMapper.readValue(response.getEntity().getContent(), Response.class);
