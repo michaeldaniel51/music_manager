@@ -60,7 +60,7 @@ public class SongController {
 
     }
 
-    @GetMapping("/all")
+    @GetMapping
     public ResponseEntity<?> getAllSong(){
         return ResponseEntity.ok(songService.findAllSong());
 

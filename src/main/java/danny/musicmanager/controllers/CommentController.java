@@ -34,6 +34,13 @@ public class CommentController {
         commentService.deleteComment(id);
 
     }
+// use update method
+//    public ResponseEntity<?> editComment(){
+//
+//        return  ResponseEntity.ok()
+//    }
+//
+
 
     @GetMapping("/{id}")
     public ResponseEntity<?> getById(@PathVariable int id) {

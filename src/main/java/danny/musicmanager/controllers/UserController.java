@@ -31,8 +31,8 @@ public class UserController {
     }
 
 
-    @PutMapping("/update")
-    public ResponseEntity<?> update(int id,@RequestBody User user){
+    @PutMapping("{id}")
+    public ResponseEntity<?> update(@PathVariable int id,@RequestBody User user){
         return ResponseEntity.ok(userService.updateUser(id,user));
 
     }
@@ -44,9 +44,9 @@ public class UserController {
     }
 
 
-    @GetMapping("/music/{id}")
-    public ResponseEntity<?> getUserByMusicId(@PathVariable int id){
-        return ResponseEntity.ok(userService.findByMusicId(id));
+    @GetMapping("/song/{id}")
+    public ResponseEntity<?> getUserBySongId(@PathVariable int id){
+        return ResponseEntity.ok(userService.findUserBySongId(id));
     }
 
 

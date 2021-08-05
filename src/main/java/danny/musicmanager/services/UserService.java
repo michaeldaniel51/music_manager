@@ -38,7 +38,7 @@ public class UserService implements UserDetailsService {
 
     }
 
-    public List<User> findByMusicId(int id) {
+    public List<User> findUserBySongId(int id) {
         List<User> user = userRepository.findBySongId(id);
         return user;
     }

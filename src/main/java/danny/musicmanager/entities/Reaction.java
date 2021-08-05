@@ -1,5 +1,6 @@
 package danny.musicmanager.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import danny.musicmanager.enums.Emoji;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,8 +27,10 @@ public class Reaction {
     private User user;
 
     @ManyToOne
+    @JsonIgnore
     private Song song;
 
     @ManyToOne
+    @JsonIgnore
     private Album album;
 }

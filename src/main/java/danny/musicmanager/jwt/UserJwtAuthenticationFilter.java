@@ -1,6 +1,5 @@
 package danny.musicmanager.jwt;
 
-import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import danny.musicmanager.dtos.Response;
@@ -10,12 +9,8 @@ import danny.musicmanager.dtos.UserLogin;
 import danny.musicmanager.entities.User;
 import danny.musicmanager.exceptions.CustomException;
 import danny.musicmanager.utils.TokenUtils;
-import io.jsonwebtoken.Jwt;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.autoconfigure.security.oauth2.resource.OAuth2ResourceServerProperties;
 import org.springframework.http.MediaType;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -26,9 +21,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import javax.servlet.FilterChain;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.awt.*;
 import java.io.IOException;
-import java.net.http.HttpRequest;
 import java.time.Instant;
 import java.time.ZoneOffset;
 import java.util.ArrayList;

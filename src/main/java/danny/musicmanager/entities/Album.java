@@ -1,5 +1,6 @@
 package danny.musicmanager.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -28,6 +29,7 @@ public class Album {
     private LocalDate dateReleased;
 
     @ManyToOne
+    @JsonIgnore
     private User user;
 
 

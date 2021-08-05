@@ -41,6 +41,7 @@ public class ReactionController {
 
     }
 
+    @GetMapping("/song/{id}")
     public ResponseEntity<?> getReactionOnSong(@PathVariable int id){
 
         return ResponseEntity.ok().body(reactionService.findReactionBySong(id));

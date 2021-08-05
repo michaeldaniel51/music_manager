@@ -75,9 +75,11 @@ public class User implements UserDetails {
 
 
     @OneToMany(mappedBy = "user",orphanRemoval = true,cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Song> song = new ArrayList<>();
 
-    @OneToMany(mappedBy = "user",orphanRemoval = true,cascade = CascadeType.ALL)
+    @OneToMany//(mappedBy = "user",orphanRemoval = true,cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Reaction> reaction;
 
     public void setPassword(String password){

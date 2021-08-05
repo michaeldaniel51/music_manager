@@ -22,6 +22,7 @@ public class Song {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
     @Column(name = "NAME")
     private String name;
 
@@ -34,6 +35,9 @@ public class Song {
     @ManyToOne
     private User user;
 
-    @OneToMany(mappedBy = "user",orphanRemoval = true,cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "song",orphanRemoval = true,cascade = CascadeType.ALL)
     private List<Reaction> reaction;
+
+    @OneToMany(mappedBy = "song",orphanRemoval = true,cascade = CascadeType.ALL)
+    private List<Comment> comment;
 }
